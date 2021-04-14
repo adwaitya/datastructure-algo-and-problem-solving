@@ -1,16 +1,4 @@
-import SinglyLinkedList from './algorithms/SingleLinkedList/singlyLinkedList';
+import reverseInteger from './problem-solving-patterns/reverseInteger';
 
-let singlyLinkedList = new SinglyLinkedList();
-singlyLinkedList.insertAtEnd('100');
-singlyLinkedList.insertAtEnd('200');
-singlyLinkedList.insertAtEnd('300');
-// singlyLinkedList.removeEnd();
-// singlyLinkedList.removeEnd();
-// singlyLinkedList.removeEnd();
-// singlyLinkedList.removeFront();
-singlyLinkedList.insertAtFront('000');
-singlyLinkedList.insertNodeAtGivenPosition(2, '150')
-// singlyLinkedList.removeNodeAtGivenPosition(3);
-console.log('singlyLinkedList', singlyLinkedList.display());
-console.log('singlyLinkedList', singlyLinkedList.reverse());
-console.log('singlyLinkedList', singlyLinkedList.display());
+console.log(reverseInteger.reverseIntegerApproach2(121) === 121);
+console.log(reverseInteger.reverseIntegerApproach1(121) === 121);
