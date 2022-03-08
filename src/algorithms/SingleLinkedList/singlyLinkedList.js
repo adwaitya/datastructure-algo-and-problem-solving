@@ -1,5 +1,10 @@
 
-import Node from './Node';
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
 export default class SinglyLinkedList {
     constructor() {
         this.head = null;
@@ -61,7 +66,7 @@ export default class SinglyLinkedList {
         this.length--;
         return currentHead;
     }
-    display() {
+    print() {
         let nodeList = [];
         if (!this.head) {
             console.log('List is empty');
@@ -109,29 +114,43 @@ export default class SinglyLinkedList {
         if (index === 0) {
             return this.removeFront();
         }
-        if (index === this.length -1) {
+        if (index === this.length - 1) {
             return this.removeEnd();
         }
-         const prevNode = this.getNode(index);
-         const removeNode = prevNode.next;
-         prevNode.next = removeNode.next;
-         return removeNode;
+        const prevNode = this.getNode(index);
+        const removeNode = prevNode.next;
+        prevNode.next = removeNode.next;
+        return removeNode;
     }
     reverse() {
-        let node = this.head;
-        this.head = this.tail;
-        this.tail = node;
-        let prev = null;
-        let next;
-        for (let i = 0; i< this.length; i ++) {
-            // console.log(node.val)
-            next = node.next;
-            // console.log(next);
-            node.next = prev;
-            prev = node;
-            // console.log(prev);
-            node = next;
+        // let node = this.head;
+        // this.head = this.tail;
+        // this.tail = node;
+        // let prev = null;
+        // let next;
+        // for (let i = 0; i < this.length; i++) {
+        //     // console.log(node.val)
+        //     next = node.next;
+        //     // console.log(next);
+        //     node.next = prev;
+        //     prev = node;
+        //     // console.log(prev);
+        //     node = next;
+        // }
+        if (!this.head.next) {
+            return this.head;
         }
+        let first = this.head;
+        this.tail = this.head;
+        let second = this.head.next;
+        while (second) {
+            let temp = second.next;
+            second.next = first;
+            first = second;
+            second = temp;
+        }
+        this.head.next = null;
+        this.head = first;
         return this;
     }
 
