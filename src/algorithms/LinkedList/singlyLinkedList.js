@@ -153,5 +153,24 @@ export default class SinglyLinkedList {
         this.head = first;
         return this;
     }
+    //Return the head of the linked list after swapping the values of the kth node from the beginning and the kth node from the end (the list is 1-indexed).
+    swap(k) {
+        let first = this.head;
+        let second = this.head;
+
+        for (let i = 1; i < this.length; i++) {
+            if (i < k) {
+                first = first.next;
+            }
+            if (i < this.length - k + 1) {
+                second = second.next;
+            }
+        }
+        let temp = first.val;
+        first.val = second.val;
+        second.val = temp;
+        return this;
+        // console.log(first.val, second.val);
+     }
 
 }

@@ -1,5 +1,5 @@
-import DoublyLinkedList from './algorithms/SingleLinkedList/doublyLinkedList';
-import SinglyLinkedList from './algorithms/SingleLinkedList/singlyLinkedList';
+import DoublyLinkedList from './algorithms/LinkedList/doublyLinkedList';
+import SinglyLinkedList from './algorithms/LinkedList/singlyLinkedList';
 
 const list = new SinglyLinkedList();
 list.insertAtEnd(100);
@@ -9,8 +9,9 @@ list.insertAtFront(50);
 list.insertNodeAtGivenPosition(2, 150);
 // list.insertNodeAtGivenPosition(4, 250);
 list.print();
-list.removeNodeAtGivenPosition(2);
+// list.removeNodeAtGivenPosition(2);
 list.print();
-list.reverse();
+// list.reverse();
+list.swap(2);
 list.print();
 // console.log(list)
