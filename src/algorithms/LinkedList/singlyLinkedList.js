@@ -173,4 +173,17 @@ export default class SinglyLinkedList {
         // console.log(first.val, second.val);
      }
 
+     middleNode() {
+         let slow = this.head;
+         let fast = this.head;
+
+         while (slow && fast && fast.next) {
+             slow = slow.next;
+             fast = fast.next.next;
+         }
+         console.log(slow)
+         return slow;
+        
+     }
+
 }

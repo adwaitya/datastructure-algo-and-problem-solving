@@ -12,6 +12,7 @@ list.print();
 // list.removeNodeAtGivenPosition(2);
 list.print();
 // list.reverse();
-list.swap(2);
+// list.swap(2);
+list.middleNode();
 list.print();
 // console.log(list)
