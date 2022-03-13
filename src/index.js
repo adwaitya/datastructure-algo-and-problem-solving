@@ -13,6 +13,6 @@ list.print();
 list.print();
 // list.reverse();
 // list.swap(2);
-list.middleNode();
+list.deleteMiddleNode();
 list.print();
 // console.log(list)

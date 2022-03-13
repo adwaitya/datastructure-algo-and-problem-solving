@@ -185,5 +185,23 @@ export default class SinglyLinkedList {
          return slow;
         
      }
+     deleteMiddleNode() {
+        let slow = this.head;
+        let fast = this.head.next;
+        let prev = null;
+        let length = 2;
+
+        while (slow && fast && fast.next) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+            length += fast ? 2 : 1
+        }
+        if (length % 2 === 0) slow.next = slow.next.next;
+        else prev.next = slow.next;
+        return this.head;
+       
+    }
+
 
 }
